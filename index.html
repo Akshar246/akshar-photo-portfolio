@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111313">
+  <meta name="description" content="A personal photography archive by Akshar — a study of light, place, and the details worth returning to.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Akshar — Photograph Archive">
+  <meta property="og:description" content="A personal archive of light, place, and the frames worth returning to.">
+  <meta property="og:image" content="">
+  <title>Akshar — Photograph Archive</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="gallery.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Akshar photography, home">
+      <span class="wordmark-mark" aria-hidden="true">A<span>·</span></span>
+      <span class="wordmark-text">AKSHAR<span>PHOTOGRAPHY</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#work">Selected frames</a>
+      <a href="#about">About this archive</a>
+      <button class="share-button" id="share-button" type="button">Share this archive <span aria-hidden="true">↗</span></button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> A PERSONAL PHOTO ARCHIVE <span class="eyebrow-divider">/</span> OPEN EDITION</p>
+        <h1 id="hero-title">Light,<br><em>held longer.</em></h1>
+        <p class="hero-deck">A living collection of places, passing details, and the frames worth returning to.</p>
+        <a class="text-link" href="#work">Explore the frames <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" id="hero-art">
+        <img class="cover-image" id="cover-image" alt="" hidden>
+        <div class="hero-art-empty" id="hero-art-empty">
+          <span class="art-kicker">THE ARCHIVE · 01</span>
+          <span class="art-main">Your cover<br>starts here.</span>
+          <span class="art-note">Add a photograph to gallery.js<br>to make this space your own.</span>
+          <span class="art-corner" aria-hidden="true">A / 01</span>
+        </div>
+      </div>
+      <div class="hero-meta" aria-label="Archive details">
+        <span>PHOTOGRAPHS BY AKSHAR</span>
+        <span>AN ONGOING STUDY OF LIGHT &amp; PLACE</span>
+      </div>
+    </section>
+
+    <section class="work-section" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2 id="work-title">Selected frames<span class="heading-period">.</span></h2>
+        </div>
+        <p class="collection-count" id="photo-count">0 photographs</p>
+      </div>
+      <div class="filters" id="filters" aria-label="Filter photographs" hidden></div>
+      <div class="gallery-grid" id="gallery-grid" aria-live="polite" aria-atomic="false"></div>
+      <div class="empty-state" id="empty-state">
+        <span class="empty-index" aria-hidden="true">01 — ∞</span>
+        <p class="empty-title">The first frame starts here.</p>
+        <p class="empty-copy">Your photographs will appear in this collection once you add them to the project. Nothing is sent to a server from this page.</p>
+        <a class="text-link" href="#add-photos">How to add photographs <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="about-label">
+        <p class="eyebrow">A NOTE ON THE ARCHIVE</p>
+        <span class="about-rule" aria-hidden="true"></span>
+      </div>
+      <div class="about-copy">
+        <h2 id="about-title">A small pause<br>inside a fast world.</h2>
+        <p>An ongoing study of light, place, and the details we almost walk past. This archive will grow one photograph at a time.</p>
+        <p class="about-signature">— Akshar</p>
+      </div>
+    </section>
+
+    <section class="add-section" id="add-photos" aria-labelledby="add-title">
+      <div class="add-heading">
+        <p class="eyebrow">MAKE IT YOURS</p>
+        <h2 id="add-title">Bring your frames in.</h2>
+      </div>
+      <div class="add-instructions">
+        <ol>
+          <li><span>01</span><p>Place optimized JPG or WebP images in the <code>photos/</code> folder.</p></li>
+          <li><span>02</span><p>Add each image's path, title, series, caption, and alt text in <code>gallery.js</code>.</p></li>
+          <li><span>03</span><p>Preview locally, then redeploy. The README has the complete steps.</p></li>
+        </ol>
+        <p class="privacy-note"><span aria-hidden="true">●</span> This is a static portfolio: no accounts, tracking, or upload server. Published photographs are public.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-mark" href="#top">AKSHAR <span>·</span> PHOTO ARCHIVE</a>
+    <p>Made to hold a little light.</p>
+    <a href="#top" class="back-top">Back to top ↑</a>
+  </footer>
+  <p class="sr-only" id="share-status" role="status" aria-live="polite"></p>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Photograph viewer">
+    <div class="lightbox-toolbar">
+      <p id="lightbox-position" class="lightbox-position"></p>
+      <button class="icon-button" id="lightbox-close" type="button" aria-label="Close photograph viewer">Close <span aria-hidden="true">×</span></button>
+    </div>
+    <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous photograph">←</button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-image" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+    <button class="lightbox-arrow lightbox-next" id="lightbox-next" type="button" aria-label="Next photograph">→</button>
+  </dialog>
+</body>
+</html>
